@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import Todo from './models/Todo';
+import TodoList from './models/TodoList';
+import TodoListView from './views/TodoListView';
 import './App.css';
+
+const store = new TodoList([new Todo("Get Coffee"), new Todo("Write simpler code")])
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TodoListView todoList={store} />
     </div>
   );
 }
